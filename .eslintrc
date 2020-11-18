@@ -10,6 +10,9 @@
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
+  "env": {
+    "browser": true
+  },
   "rules": {
     
   "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
