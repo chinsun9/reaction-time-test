@@ -1,3 +1,5 @@
+- 작업중
+
 # reaction-time-test
 
 - 클론코딩
@@ -5,9 +7,11 @@
 - https://humanbenchmark.com/tests/reactiontime
 
 ## reportWebVitals
+
 - 함수 리터값을 명시하라는데 뭔지 모르겠다
 
 ## Could not find a declaration file for module 'react'.
+
 - npm install --save @types/react @types/react-dom
 
 ## react typescirpt에 eslint, prettier, airbnb style guild 적용하기
