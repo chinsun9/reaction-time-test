@@ -16,14 +16,48 @@
   // Start
 
   .start {
-    border: 1px solid #dee2e6;
+    border: 1px solid #dee2e628;
     border-radius: 0.25rem;
 
     &.go {
-      background-color: green;
+      position: relative;
+      background-image: linear-gradient(
+        to right,
+        #ff553b 0%,
+        #ff553b 19%,
+        #ff553b 60%,
+        #ff553b 100%
+      );
+
+      &::after {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        z-index: 5;
+        width: 100px;
+        height: 100px;
+
+        background-image: linear-gradient(
+          to right,
+          #5cff3ba2 0%,
+          #5cff3ba2 19%,
+          #5cff3ba2 60%,
+          #5cff3ba2 100%
+        );
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        backdrop-filter: invert(100%);
+        content: "";
+      }
     }
     &.wait {
-      background-color: red;
+      background-image: linear-gradient(
+        to right,
+        #ff553b 0%,
+        #ff553b 19%,
+        #ff553b 60%,
+        #ff553b 100%
+      );
     }
   }
 
@@ -48,6 +82,11 @@
 
   .msg {
     font-size: medium;
+
+    p {
+      margin: 10px;
+    }
+
     .rank {
       font-size: xx-large;
     }
