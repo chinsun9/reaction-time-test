@@ -8,4 +8,47 @@
   font-size: calc(10px + 2vmin);
   text-align: center;
   background-color: #282c34;
+
+  > * {
+    min-width: 90vw;
+  }
+
+  // Start
+
+  .start {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+  }
+
+  .history {
+    margin-top: 20px;
+    .item {
+      font-size: medium;
+    }
+  }
+
+  // Result
+
+  .result {
+    h1 {
+      display: inline;
+    }
+  }
+
+  .msg {
+    font-size: medium;
+    .rank {
+      font-size: xx-large;
+    }
+
+    .rank-msg {
+      font-size: x-large;
+    }
+  }
+
+  .replay {
+    button {
+      width: 100%;
+    }
+  }
 }
