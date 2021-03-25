@@ -21,15 +21,15 @@ function Start({ setPage, setRootHistory }: Props) {
       return;
     }
 
-    if (state + 1 >= 5) {
-      setRootHistory(history);
-      setPage('result');
-      return;
-    }
-
     // 클릭하면 안돼
     if (!isClick) {
       setState((prev) => prev - 1);
+      return;
+    }
+
+    if (state + 1 >= 5) {
+      setRootHistory(history);
+      setPage('result');
       return;
     }
 
