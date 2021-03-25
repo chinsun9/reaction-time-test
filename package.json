@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.{ts,tsx}\"",
     "lint": "eslint \"./src/**/*.{ts,tsx}\"",
-    "lint:fix": "eslint --fix \"./src/**/*.{ts,tsx}\""
+    "lint:fix": "eslint --fix \"./src/**/*.{ts,tsx}\"",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -51,5 +52,6 @@
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "1.7.0",
     "prettier": "^2.2.1"
-  }
+  },
+  "homepage": "https://chinsun9.github.io/reaction-time-test"
 }
