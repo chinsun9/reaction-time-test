@@ -16,3 +16,28 @@ button {
   padding: 1rem;
   font-size: large;
 }
+
+.sidetab {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.452);
+  font-size: 34px;
+  background-color: rgba(247, 247, 247, 0.226);
+}
+/* a tag no color */
+a {
+  color: inherit;
+}
+
+@media (max-width: 736px) {
+  .sidetab {
+    display: none;
+  }
+}

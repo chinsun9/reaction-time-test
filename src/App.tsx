@@ -4,6 +4,7 @@ import Main from './component/Main';
 import Start from './component/Start';
 import Result from './component/Result';
 import { Page } from './types';
+import SideTab from './component/SideTab';
 
 function App() {
   const [page, setPage] = useState<Page>('main');
@@ -25,7 +26,12 @@ function App() {
     [history]
   );
 
-  return <div className="App">{renderPage(page)}</div>;
+  return (
+    <>
+      <div className="App">{renderPage(page)}</div>
+      <SideTab />
+    </>
+  );
 }
 
 export default App;
