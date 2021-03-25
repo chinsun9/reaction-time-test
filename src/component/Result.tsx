@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import rank from '../static/rank';
 import { Page } from '../types';
 
 type Props = {
@@ -7,9 +8,32 @@ type Props = {
 };
 
 function Result({ setPage, history }: Props) {
-  const onReplayHandler = () => {
+  const [avgReactionTime] = useState(
+    history.reduce((p, c) => p + c, 0) / history.length
+  );
+  const [msg, setMsg] = useState({ title: '-', desc: '계산중...' });
+
+  const onReplayHandler = useCallback(() => {
     setPage('main');
-  };
+  }, [setPage]);
+
+  useEffect(() => {
+    const renderRsultMessage = () => {
+      for (let index = 0; index < rank.length; index += 1) {
+        const { time, title, desc } = rank[index];
+
+        if (avgReactionTime <= time) {
+          setMsg({ title, desc });
+          return;
+        }
+      }
+
+      const { title, desc } = rank[rank.length - 1];
+      setMsg({ title, desc });
+    };
+
+    renderRsultMessage();
+  }, [avgReactionTime]);
 
   return (
     <>
@@ -27,15 +51,15 @@ function Result({ setPage, history }: Props) {
       <h2>반응속도 테스트 결과</h2>
 
       <div className="result">
-        <h1>{history.reduce((p, c) => p + c, 0) / history.length}</h1>
+        <h1>{avgReactionTime}</h1>
         <span>ms</span>
       </div>
 
       <div className="msg">
         <p>당신의 반응속도는</p>
-        <p className="rank">하위 1%</p>
+        <p className="rank">{msg.title}</p>
         <p>입니다.</p>
-        <p className="rank-msg">반응속도가 너무 느립니다. 불가능한 ...</p>
+        <p className="rank-msg">{msg.desc}</p>
       </div>
 
       <div className="replay">
