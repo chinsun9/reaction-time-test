@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Page } from '../types';
 
 type Props = {
@@ -6,9 +6,9 @@ type Props = {
 };
 
 function Main({ setPage }: Props) {
-  const onClickHandler = () => {
+  const onClickHandler = useCallback(() => {
     setPage('start');
-  };
+  }, [setPage]);
 
   return (
     <>
