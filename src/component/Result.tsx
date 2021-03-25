@@ -38,14 +38,14 @@ function Result({ setPage, history }: Props) {
   return (
     <>
       <div className="share">
-        <button
+        {/* <button
           type="button"
           onClick={() => {
             console.log('share');
           }}
         >
           결과 공유하기
-        </button>
+        </button> */}
       </div>
 
       <h2>반응속도 테스트 결과</h2>
