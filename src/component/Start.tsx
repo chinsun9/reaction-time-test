@@ -89,7 +89,7 @@ function Start({ setPage, setRootHistory }: Props) {
   useEffect(() => {
     const sto = setTimeout(() => {
       setIsClick(true);
-    }, 1000 + (Math.random() - 0.5) * 500);
+    }, 1500 + (Math.random() - 0.5) * 1000);
 
     if (isClick) {
       setT0(Date.now());
