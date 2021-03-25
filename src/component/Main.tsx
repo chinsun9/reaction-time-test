@@ -1,6 +1,15 @@
 import React from 'react';
+import { Page } from '../types';
 
-function Main() {
+type Props = {
+  setPage: React.Dispatch<React.SetStateAction<Page>>;
+};
+
+function Main({ setPage }: Props) {
+  const onClickHandler = () => {
+    setPage('start');
+  };
+
   return (
     <>
       <h1>반응속도 테스트</h1>
@@ -15,12 +24,7 @@ function Main() {
           blanditiis dolorum adipisci necessitatibus. Natus!
         </p>
       </div>
-      <button
-        type="button"
-        onClick={() => {
-          console.log(1);
-        }}
-      >
+      <button type="button" onClick={onClickHandler}>
         테스트 시작
       </button>
     </>

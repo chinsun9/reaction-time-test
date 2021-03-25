@@ -18,12 +18,23 @@
   .start {
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
+
+    &.go {
+      background-color: green;
+    }
+    &.wait {
+      background-color: red;
+    }
   }
 
   .history {
     margin-top: 20px;
-    .item {
-      font-size: medium;
+    .list {
+      position: absolute;
+
+      .item {
+        font-size: medium;
+      }
     }
   }
 
