@@ -112,8 +112,9 @@ function Start({ setPage, setRootHistory }: Props) {
       <div className="history">
         <div className="list">
           {history.map((value, idx) => {
+            const key = value + idx;
             return (
-              <div className="item">
+              <div className="item" key={key}>
                 {idx + 1}번째 시도: {value}ms
               </div>
             );
