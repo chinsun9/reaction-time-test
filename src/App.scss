@@ -1,4 +1,6 @@
 .App {
+  --gray: #37373d;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,26 +9,70 @@
   color: white;
   font-size: calc(10px + 2vmin);
   text-align: center;
-  background-color: #282c34;
+  background-color: #1e1e1e;
 
-  > * {
-    min-width: 90vw;
+  button {
+    width: fit-content;
+    padding: 16px 32px;
+    color: inherit;
+    background-color: transparent;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    box-shadow: none;
+    transition: all 0.2s;
+
+    &:hover {
+      --color: 14, 99, 156;
+      --rgb: rgb(var(--color));
+
+      background-color: var(--rgb);
+      box-shadow: 0px 10px 20px 3px rgba(var(--color), 0.4);
+    }
+  }
+
+  > {
+    * {
+      width: 80vw;
+    }
+
+    hr {
+      border: none;
+      border-bottom: 1px solid var(--gray);
+    }
+
+    progress[value] {
+      height: 10px;
+      margin-top: 20px;
+      appearance: none;
+
+      &::-webkit-progress-value {
+        background-image: -webkit-linear-gradient(left, #007acc, #007acc);
+      }
+
+      &::-webkit-progress-bar {
+        background-color: #eee;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+      }
+    }
   }
 
   // Start
 
   .start {
+    --color: #1e1e1e;
+
     border: 1px solid #dee2e628;
     border-radius: 0.25rem;
+    cursor: pointer;
 
     &.go {
       position: relative;
       background-image: linear-gradient(
         to right,
-        #ff553b 0%,
-        #ff553b 19%,
-        #ff553b 60%,
-        #ff553b 100%
+        var(--color) 0%,
+        var(--color) 19%,
+        var(--color) 60%,
+        var(--color) 100%
       );
 
       &::after {
@@ -53,10 +99,10 @@
     &.wait {
       background-image: linear-gradient(
         to right,
-        #ff553b 0%,
-        #ff553b 19%,
-        #ff553b 60%,
-        #ff553b 100%
+        var(--color) 0%,
+        var(--color) 19%,
+        var(--color) 60%,
+        var(--color) 100%
       );
     }
   }
@@ -77,6 +123,7 @@
   .result {
     h1 {
       display: inline;
+      color: #9cdcfe;
     }
   }
 
@@ -92,7 +139,15 @@
     }
 
     .rank-msg {
+      margin: 50px 0;
       font-size: x-large;
+
+      &::before {
+        content: '"';
+      }
+      &::after {
+        content: '"';
+      }
     }
   }
 

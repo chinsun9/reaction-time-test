@@ -7,14 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 button {
   padding: 1rem;
   font-size: large;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
 }
 
 .sidetab {
@@ -27,13 +27,9 @@ button {
   justify-content: center;
   width: 50px;
   height: 100%;
-  color: rgba(0, 0, 0, 0.452);
+  color: #858585;
   font-size: 34px;
-  background-color: rgba(247, 247, 247, 0.226);
-}
-/* a tag no color */
-a {
-  color: inherit;
+  background-color: #333333;
 }
 
 @media (max-width: 736px) {
