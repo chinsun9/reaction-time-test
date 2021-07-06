@@ -105,7 +105,7 @@ function Start({ setPage, setRootHistory }: Props) {
       <div className="label">{state}/5</div>
       <progress id="progress" max="5" value={state} />
 
-      <div className={getClassName()} aria-hidden onClick={process}>
+      <div className={getClassName()} aria-hidden onMouseDown={process}>
         {renderText()}
       </div>
 
