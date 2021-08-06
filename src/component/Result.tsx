@@ -51,7 +51,7 @@ function Result({ setPage, history }: Props) {
       <h2>반응속도 테스트 결과</h2>
 
       <div className="result">
-        <h1>{avgReactionTime}</h1>
+        <h1>{avgReactionTime.toFixed(2)}</h1>
         <span>ms</span>
       </div>
 
