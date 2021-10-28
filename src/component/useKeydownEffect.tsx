@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 export function useKeydownEffect(callback: () => void) {
   useEffect(() => {
     const keydownHandler = (e: KeyboardEvent): void => {
-      if (!(e.key === ' ' || /[a-zA-Z]/.test(e.key))) return;
+      if (!(e.key === ' ' || (e.key.length === 1 && /[a-zA-Z]/.test(e.key))))
+        return;
       callback();
     };
 
