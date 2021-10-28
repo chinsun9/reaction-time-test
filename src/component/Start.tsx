@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Page } from '../types';
+import { useKeydownEffect } from './useKeydownEffect';
 
 type Props = {
   setPage: React.Dispatch<React.SetStateAction<Page>>;
@@ -42,6 +43,10 @@ function Start({ setPage, setRootHistory }: Props) {
     });
     setState((prev) => prev + 1);
   }, [history, isClick, isFirst, setPage, setRootHistory, state, t0]);
+
+  useKeydownEffect(() => {
+    process();
+  });
 
   const getClassName = useCallback(() => {
     const baseClassName = 'start';

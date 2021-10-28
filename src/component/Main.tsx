@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { Page } from '../types';
+import { useKeydownEffect } from './useKeydownEffect';
 
 type Props = {
   setPage: React.Dispatch<React.SetStateAction<Page>>;
@@ -9,6 +10,10 @@ function Main({ setPage }: Props) {
   const onClickHandler = useCallback(() => {
     setPage('start');
   }, [setPage]);
+
+  useKeydownEffect(() => {
+    setPage('start');
+  });
 
   return (
     <>

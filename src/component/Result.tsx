@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import rank from '../static/rank';
 import { Page } from '../types';
+import { useKeydownEffect } from './useKeydownEffect';
 
 type Props = {
   setPage: React.Dispatch<React.SetStateAction<Page>>;
@@ -16,6 +17,10 @@ function Result({ setPage, history }: Props) {
   const onReplayHandler = useCallback(() => {
     setPage('main');
   }, [setPage]);
+
+  useKeydownEffect(() => {
+    setPage('main');
+  });
 
   useEffect(() => {
     const renderRsultMessage = () => {
@@ -63,7 +68,13 @@ function Result({ setPage, history }: Props) {
       </div>
 
       <div className="replay">
-        <button type="button" onClick={onReplayHandler}>
+        <button
+          type="button"
+          onClick={onReplayHandler}
+          onKeyDown={(ev) => {
+            console.log({ ev });
+          }}
+        >
           테스트 다시하기
         </button>
       </div>
